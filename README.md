@@ -5,13 +5,15 @@ application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.6.6
+
+* Rails version 6
 
 * System dependencies
 
 * Configuration
 
-* Database creation
+* Database creation: mysql 8 
 
 * Database initialization
 
