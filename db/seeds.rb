@@ -20,3 +20,7 @@ User.create!(first_name: 'Roman',
     password: 'password', 
     password_confirmation: 'password', 
     role: 'member')
+
+25.times do |i|
+    Post.new()
+end
