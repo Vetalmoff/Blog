@@ -28,6 +28,10 @@ gem 'jbuilder', '~> 2.7'
 gem 'devise'
 gem 'simple_form'
 gem 'faker'
+gem 'database_cleaner'
+gem 'pry', '~> 0.13.1'
+gem 'will_paginate'
+gem 'friendly_id'
 ##########
 
 # Use Active Storage variant

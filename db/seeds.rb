@@ -6,6 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require 'database_cleaner'
+
+DatabaseCleaner.clean_with(:truncation)
+
 
 User.create!(first_name: 'Ivan', 
     last_name: 'Tarnov', 
@@ -22,5 +26,12 @@ User.create!(first_name: 'Roman',
     role: 'member')
 
 25.times do |i|
-    Post.new()
+    post = Post.new
+    post.title = Faker::Lorem.sentence(word_count: 3, random_words_to_add: 7)
+    post.body = Faker::Lorem.paragraph_by_chars(number: 1500)
+    post.user = User.all.sample
+    post.thumbnail.attach(io: open("https://picsum.photos/1920/1080"), filename: "#{i}_thumbnail.jpg")
+    post.banner.attach(io: open("https://picsum.photos/1920/1080"), filename: "#{i}_banner.jpg")
+    post.views = Faker::Number.between(from: 1, to: 500)
+    post.save
 end
