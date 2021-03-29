@@ -1,10 +1,15 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'users/index'
+    get 'users/show'
+  end
   resources :posts, only: [:show, :index]
 
   root 'posts#index'
 
   namespace :admin do
     resources :posts 
+    resources :users
   end
 
   devise_for :users
