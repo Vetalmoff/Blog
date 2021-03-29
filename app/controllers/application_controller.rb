@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
 
     before_action :configure_permitted_parameters, if: :devise_controller?
 
-    helper_method :is_admin!
+    # helper_method :is_admin!
 
     protected
 
@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
         devise_parameter_sanitizer.permit(:account_update, keys: [:first_name, :last_name, :email, :password])
     end
 
-    def is_admin!
-        redirect_to root_path unless current_user&.admin?
-    end
+    # def is_admin!
+    #     redirect_to root_path unless current_user&.admin?
+    # end
 end
