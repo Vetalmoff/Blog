@@ -5,10 +5,15 @@
   <div class="row">
     <div class="jumbotron" style="width: 100%">
       <h1 class="display-4">
-        <%= link_to @post.title, root_path %>  
+        <%= link_to @post.title, root_path %> 
       </h1>
       <p class="lead">
         <%= @post.updated_at.strftime("%A, %B %e, %Y") %> by <%= @post.user.first_name %> <%= @post.user.last_name %> | <%= pluralize(@post.views, "View") %>
+        <% if current_user&.admin? %>
+            <%= link_to 'Edit', edit_admin_post_path(@post), class: "badge badge-primary" %>
+            <%= link_to 'Destroy', admin_post_path(@post), data: {confirm: "Are you sure?"},
+                                      :method => :delete, class: "badge badge-danger" %>
+          <% end %> 
       </p>
       <hr class="my-4">
       <div class="post_body">

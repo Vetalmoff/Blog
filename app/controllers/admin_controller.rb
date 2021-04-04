@@ -4,6 +4,6 @@ class AdminController < ApplicationController
     private
 
     def is_admin!
-        redirect_to root_path unless current_user&.admin?
+        redirect_to root_path, alert: "Permission denied" unless current_user&.admin?
     end
 end

@@ -9,10 +9,10 @@ class Admin::PostsController < AdminController
   end
 
   # GET /posts/1 or /posts/1.json
-  def show
-    views = @post.views + 1
-    @post.update(views: views)
-  end
+  # def show
+  #   views = @post.views + 1
+  #   @post.update(views: views)
+  # end
 
   # GET /posts/new
   def new
