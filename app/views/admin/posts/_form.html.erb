@@ -1,0 +1,21 @@
+
+<%= form_with model: [:admin, post] do |f| %>
+  
+  <div class="form-inputs">
+    <p><%= f.label :title, class: 'form-control' %></p>
+    <p><%= f.text_field :title, class: 'form-control string' %></p>
+    <br>
+    <p><%= f.label :thumbnail, class: 'form-control' %></p>
+    <p><%= f.file_field :thumbnail %></p>
+    <br>
+    <p><%= f.label :banner, class: 'form-control' %></p>
+    <p><%= f.file_field :banner %></p>
+    <br>
+    <p><%= f.label :body, class: 'form-control' %></p>
+    <p><%= f.rich_text_area :body %></p>
+  </div>
+
+  <div class="form-actions">
+    <p><%= f.button :submit, class: 'btn btn-outline-primary' %></p>
+  </div>
+<% end %>
